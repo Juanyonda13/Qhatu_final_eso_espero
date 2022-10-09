@@ -13,7 +13,7 @@ class Imagen extends Model
     protected $guarded = ['id_imagen'];
 
     public function Artesania(){
-        return $this->hasMany(Artesania::class,'id_artesania','artesania_id');
+        return $this->hasMany(Artesania::class,'artesania_id');
     }
 
 }
