@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.header');
 });
 //////el detalle da la artesania
 Route::get('/detalle_artesania/{id_artesania}',[ArtesaniaController::class,'detalle_artesania'])->name('detalleArtesania');
+//////compra del producto :(
+Route::get('/pasarela_compra',[ArtesaniaController::class,'pasarela'])->name('pasarela');
