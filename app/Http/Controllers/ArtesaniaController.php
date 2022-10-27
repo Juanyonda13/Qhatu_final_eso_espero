@@ -10,6 +10,14 @@ use Illuminate\Http\Request;
 class ArtesaniaController extends Controller
 {
     //
+    public function index(){
+        $artesanias=Artesania::get();           
+        foreach($artesanias as $a){
+            $imagen=Imagen::where('artesania_id',$a->id_artesania)->first();
+            $array[]=[$imagen];
+        }
+       return view('index',compact('artesanias','artesanias','array','imagen')); 
+    }
     public function detalle_artesania($id_artesania){
             $artesania=Artesania::findorFail($id_artesania);
             $imagenes=Imagen::where('artesania_id',$id_artesania)->get();

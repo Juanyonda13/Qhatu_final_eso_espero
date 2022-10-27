@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/detailCraft.css">
     <link rel="stylesheet" href="../css/pasarela.css">
+    <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/> 
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -14,7 +15,7 @@
     <title>Qhatu</title>
  </head>
  <body>
-    <div class="col-12 p-0 d-flex justify-content-center flex-wrap">
+    <div class="col-12 p-0 d-flex justify-content-center flex-wrap cuerpo_index">
         <div class="col-2 fs-1">
              <h1>Qhatu</h1>
         </div>

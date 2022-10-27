@@ -1,0 +1,25 @@
+.cuerpo_index
+{
+    background-color: rgb(236, 239, 241);
+}
+
+.fondo{
+    position: absolute;
+    z-index: -20;
+}
+.card-body{
+    background-color: rgba(200, 200, 200, 0.303);
+    border-color: rgb(211, 169, 41);
+}
+
+.carrusel{
+    box-shadow: 30px 30px 30px -20px black;
+    transition-delay: 0.2s;
+    padding-left: 0.5%;
+    width: 48%;
+}
+.texto{
+    padding-right: 2%;
+    text-align: justify;
+    box-shadow: 30px 30px 30px -20px black;
+}
