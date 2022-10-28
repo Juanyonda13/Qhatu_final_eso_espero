@@ -43,8 +43,7 @@
                 Autem nisi veritatis nobis illum. Blanditiis officia ipsa placeat numquam at suscipit sunt fuga et animi maxime veniam expedita dolorem maiores illo atque deleniti ut, asperiores natus hic eius inventore.
                 </p>
             </article>
-            <section id="carouselExampleControls" class="carrusel  carousel slide col-12  col-md-6  col-xxl-6"
-                data-bs-ride="carousel">
+            <section id="carouselExampleControls" class="carrusel  carousel slide col-12  col-md-6  col-xxl-6" data-bs-ride="carousel">
                 <article class="carousel-inner">
                     <article class="carousel-item active">
                         <img src="img/Fondo1.jpg" class="d-block w-100" alt="img" height="400px" width="400px">
@@ -72,8 +71,8 @@
             </section>
         </section>
     
-        <section class=" col-12 flex-wrap d-flex"> 
-                <section class="col-12 d-flex flex-wrap">
+        <section class="col-12 flex-wrap d-flex"> 
+                <section class=" col-12 d-flex flex-wrap">
                     @foreach ($artesanias as $artesania)
                     <article class="col">
                         <a href="{{route('detalleArtesania',$artesania->id_artesania)}}"class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;"

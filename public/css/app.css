@@ -22,4 +22,9 @@
     padding-right: 2%;
     text-align: justify;
     box-shadow: 30px 30px 30px -20px black;
+    width: 48%
+}
+.carousel-item{
+    padding-right: 0% ;
+    width: 100%;
 }

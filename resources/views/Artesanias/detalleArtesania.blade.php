@@ -84,11 +84,12 @@
                                         {{-- este div contiene las unidades disponibles --}}
                                         <div class="col-12 border-warning border  rounded-2 shadow-lg d-flex flex-wrap p-1">
                                             <div class="col-9 d-flex  justify-content-end text-break" style="font-size:5vh">
-                                                <p class="m-0">cantidad disponible.</p>
+                                                <p class="m-0">Cantidad disponible.</p>
                                             </div>
                                             <div class="col-1 p-0 pt-2 d-flex ">
                                                 <div class="w-100 p-0 d-flex bg-secondary rounded-3 justify-content-center align-items-center">
-                                                    <p class="d-flex">50</p>
+                                                    
+                                                    <p>{{$artesania->cantidad}}</p>
                                                 </div>
                                             </div>
 
@@ -157,21 +158,21 @@
                             <div class="col-7 border-bottom"></div>
                         </div>
 
-                        <div class="col-12 border border-top-0 shadow-lg d-flex flex-row gap-3 p-2 mb-5">
+                        <div class="col-12 border border-top-0 shadow-lg d-flex flex-row gap-3 p-4 mb-5">
                             @foreach ($artesanias as $a) 
-                                <div class="card" style="width: 18rem;">
+                                <div class="card" style="width: 22rem;">
                                     @foreach ($array as $y)
                                        @foreach ($y as $item)
                                             @if ($item->artesania_id == $a->id_artesania)
-                                                <img src="{{$item->imagen}}" class="card-img-top" alt="...">
+                                                <img src="{{$item->imagen}}" class="card-img-top" alt="img" height="150" width="20">
                                             @endif 
                                        @endforeach
                                     @endforeach
 
                                    <div class="card-body">
                                         <h5 class="card-title">{{$a->nombre}}</h5>
-                                        <p class="card-text">{{$a->descripcion}}</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        {{-- <p class="card-text">{{$a->descripcion}}</p> --}}
+                                        <a href="#" class="btn btn-primary">Ver detalle</a>
                                     </div>
                                 </div>
                             @endforeach
