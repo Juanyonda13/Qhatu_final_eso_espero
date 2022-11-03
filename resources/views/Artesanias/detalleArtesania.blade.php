@@ -1,22 +1,6 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/detailCraft.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/> 
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <title>Qhatu</title>
-</head>
-<body> --}}
-    {{-- este es el cuerpo --}}
 @extends('Layouts.header')
 @section('content')
-    <div class="col-12 d-flex 
+    <div class="cuerpo_detalle col-12 d-flex 
                 justify-content-center 
                 pt-3 d-flex 
                 flex-wrap">
@@ -30,26 +14,28 @@
                                 d-flex 
                                 flex-wrap">
                        {{-- este div contiene el titulo y el icono feo del carrito :( --}}
-                      <div class="col-12
+                      {{-- <div class="col-12
                                   d-flex
                                   flex-wrap">
                          <div class="col-9 d-flex justify-content-stard pl-5 align-items-center text-break">
-                            <h1>MANILLA ARTESANAL</h1>
+                            <h1>{{ $artesania->nombre }}</h1>
                          </div>
                          <div class="col-3  d-flex justify-content-end p-0">
                             <img src="../img/icono_compra.png" class="img-fluid" width="100px" alt="">
                          </div>
-                      </div>
+                      </div> --}}
                       {{-- este div contiene la informacion de la artesania y fotos con la compra --}}
                       <div class="col-12 d-flex flex-wrap row  mt-2">
                           <div class="col-6">
                                  {{-- esta es la carta que contiene la descripcion de la artesania foto del indigena y la cantidad de unidades --}}
-                                 <div class="border rounded-2 shadow-lg p-2">
+                                 <div class="border rounded-2 shadow-lg p-2 mt-5">
                                         {{-- este div contiene la foto del indigena su nombre , calificacion y iconos --}}
                                         <div class="col-12 d-flex row p-0">
                                             {{-- foto de perfil --}}
                                             <div class="d-flex col-2 p-0 justify-content-center">
-                                                <img src="../img/foto-indigena.jpeg" class=" rounded-circle" height="50px" width="50px" alt="">
+                                                @foreach ($artesania->Indigena as $foto)
+                                                <img src="{{$foto->foto}}" class=" rounded-circle" height="50px" width="50px" alt="">
+                                                @endforeach 
                                             </div>
                                             {{-- nombre del indigena --}}
                                             <div class="col-5 p-0 d-flex align-items-center pb-3 text-break">
@@ -102,7 +88,7 @@
 
                           </div>
                           {{-- este div contiene las imagenes de la artesanias   colores y cantidades a comprar --}}
-                          <div class="col-6  ">
+                          <div class="col-6 mt-5 ">
                                 <div class="col-12 d-flex justify-content-center fs-2 gap-2">
                                     <p>Añadir a Favoritos</p><i class="bi bi-bookmark-fill"></i>
                                 </div>
@@ -125,7 +111,7 @@
                                       </div>
                                    </div>
                                 </div>
-                                <div class="col-12 d-flex justify-content-center fs-2 text-break text-secondary">
+                                <div class="col-12 d-flex justify-content-center fs-1 text-break text-secondary">
                                     <p>Colores Disponibles</p>
                                 </div>
                                 <div class="col-10 m-auto  border rounded-2 d-flex flex-row fs-3 gap-3 justify-content-center shadow-lg p-3">
@@ -158,7 +144,7 @@
                             <div class="col-7 border-bottom"></div>
                         </div>
 
-                        <div class="col-12 border border-top-0 shadow-lg d-flex flex-row gap-3 p-4 mb-5">
+                        {{-- <div class="col-12 border border-top-0 shadow-lg d-flex flex-row gap-3 p-4 mb-5">
                             @foreach ($artesanias as $a) 
                                 <div class="card" style="width: 22rem;">
                                     @foreach ($array as $y)
@@ -171,13 +157,36 @@
 
                                    <div class="card-body">
                                         <h5 class="card-title">{{$a->nombre}}</h5>
-                                        {{-- <p class="card-text">{{$a->descripcion}}</p> --}}
                                         <a href="#" class="btn btn-primary">Ver detalle</a>
                                     </div>
                                 </div>
                             @endforeach
                             
 
+                        </div> --}}
+
+                        <div class="carta d-flex flex-row mt-5 mb-5">
+                            @foreach ($artesanias as $artesania)
+                                <div class="card container-fluid rounded-4 " style="width: 15rem;">
+                                    <a href="{{ route('detalleArtesania', $artesania->id_artesania) }}">
+            
+                                        @foreach ($array as $y)
+                                            @foreach ($y as $item)
+                                                @if ($item->artesania_id == $artesania->id_artesania)
+                                                    <img src="{{ $item->imagen }}" class="card-img-top mt-4 " alt="img" height="150"
+                                                        width="20">
+                                                @endif
+                                            @endforeach
+                                        @endforeach
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ $artesania->nombre }}</h5>
+                                            <a href="{{ route('detalleArtesania', $artesania->id_artesania) }}" class="btn btn-primary">Ver detalle</a>
+                                        </div>
+                                        <br>
+            
+                                </div>
+                            @endforeach
+                            </a>
                         </div>
                     </div>
 
@@ -187,6 +196,3 @@
           </div>
     </div>
 @endsection
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> --}}
-{{-- </body>
-</html> --}}

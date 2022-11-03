@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/detailCraft.css">
     <link rel="stylesheet" href="../css/pasarela.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/> 
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
@@ -15,9 +16,10 @@
     <title>Qhatu</title>
  </head>
  <body>
-    <div class="col-12 p-0 d-flex justify-content-center flex-wrap cuerpo_index">
+    <div class=" header col-12 p-0 d-flex justify-content-center flex-wrap ">
         <div class="col-2 fs-1">
-             <h1>Qhatu</h1>
+             <a href="http://127.0.0.1:8000/index" class="nav-link">Qhatu</a>
+
         </div>
         <div class="col-8 d-flex justify-content-center gap-2">
                <div class="col-6 d-flex justify-content-end pt-2 fs-4">
@@ -35,9 +37,9 @@
             <hr class="" style="height:1px;border:none;color:#333;background-color:#333;">
         </div>
     </div>
-    <div class="col-12">
-        @yield('content')
-    </div>
+
+    @yield('content')
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
  </body>
  </html>

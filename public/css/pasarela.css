@@ -4,8 +4,11 @@
     height: 100%;
 }
 .fondo-pasarela{
-    background-color: white;
+  background-color: rgb(236, 239, 241);
     
+}
+.cuerpo_detalle{
+  background-color: rgb(236, 239, 241);
 }
 
 
