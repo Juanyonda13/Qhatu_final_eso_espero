@@ -28,7 +28,7 @@
                       <div class="col-12 d-flex flex-wrap row  mt-2">
                           <div class="col-6">
                                  {{-- esta es la carta que contiene la descripcion de la artesania foto del indigena y la cantidad de unidades --}}
-                                 <div class="border rounded-2 shadow-lg p-2 mt-5">
+                                 <div class="border rounded-2 shadow-lg p-3 mt-5">
                                         {{-- este div contiene la foto del indigena su nombre , calificacion y iconos --}}
                                         <div class="col-12 d-flex row p-0">
                                             {{-- foto de perfil --}}
@@ -40,7 +40,7 @@
                                             {{-- nombre del indigena --}}
                                             <div class="col-5 p-0 d-flex align-items-center pb-3 text-break">
                                                 @foreach ($artesania->Indigena as $nombre)
-                                                  <p>{{$nombre->nombre}}</p>
+                                                  <p class="nombre">{{$nombre->nombre}}</p>
                                                 @endforeach  
                                             </div>
                                             {{-- estrellas --}}
@@ -70,17 +70,16 @@
                                         {{-- este div contiene las unidades disponibles --}}
                                         <div class="col-12 border-warning border  rounded-2 shadow-lg d-flex flex-wrap p-1">
                                             <div class="col-9 d-flex  justify-content-end text-break" style="font-size:5vh">
-                                                <p class="m-0">Cantidad disponible.</p>
+                                                <p class="cantidadd">Cantidad disponible.</p>
                                             </div>
                                             <div class="col-1 p-0 pt-2 d-flex ">
-                                                <div class="w-100 p-0 d-flex bg-secondary rounded-3 justify-content-center align-items-center">
-                                                    
-                                                    <p>{{$artesania->cantidad}}</p>
+                                                <div class="w-100 d-flex">      
+                                                    <p class="cantidad">{{$artesania->cantidad}}</p>
                                                 </div>
                                             </div>
 
                                             <div class="col-1 d-flex align-items-end p-0">
-                                                <p>UND</p>
+                                                <p class="unidad">UND</p>
                                             </div>
                                         </div>
                                  </div>
@@ -89,10 +88,10 @@
                           </div>
                           {{-- este div contiene las imagenes de la artesanias   colores y cantidades a comprar --}}
                           <div class="col-6 mt-5 ">
-                                <div class="col-12 d-flex justify-content-center fs-2 gap-2">
+                                <div class="col-12 d-flex justify-content-center fs-3 gap-2">
                                     <p>Añadir a Favoritos</p><i class="bi bi-bookmark-fill"></i>
                                 </div>
-                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
+                                <div id="carouselExampleControls" class="carousel slide mb-10" data-bs-ride="carousel" >
                                     <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel px-5">
                                         <div class="carousel-inner">
                                             @foreach ($imagenes as $img)
@@ -111,34 +110,22 @@
                                       </div>
                                    </div>
                                 </div>
-                                <div class="col-12 d-flex justify-content-center fs-1 text-break text-secondary">
-                                    <p>Colores Disponibles</p>
-                                </div>
-                                <div class="col-10 m-auto  border rounded-2 d-flex flex-row fs-3 gap-3 justify-content-center shadow-lg p-3">
-                                    <a class="bi bi-circle-fill text-danger" href="#"></a>
-                                    <a class="bi bi-circle-fill text-info" href="#"></a>
-                                    <a class="bi bi-circle-fill text-danger" href="#"></a>
-                                    <a class="bi bi-circle-fill text-warning" href="#"></a>
-                                    <a class="bi bi-circle-fill text-white" href="#"></a>
-                                </div>
-                                <div class="col-12  mt-2 d-flex flex-row">
-                                    <div class="col-2 p-2  m-auto">
-                                        <div class="border border-warning rounded-3 d-flex justify-content-center shadow-lg bg-transparent">
-                                              <h1>1</h1>
-                                        </div>
+                                <div  class="compra col-12  d-flex justify-content-evenly">
+                                    <div class="col-12 d-flex justify-content-center ">
+                                        <button type="button" class="botoncom">Comprar ahora</button>
                                     </div>
-                                    <div class="col-2 d-flex flex-column gap-1 ">
-                                               <button class="btn btn-secondary fs-4 p-0">+</button>
-                                               <button class="btn btn-secondary fs-4 p-0">-</button>
-                                    </div>
-                                    <div class="col-7 d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-warning border border-white fs-3 shadow-lg">Comprar</button>
+                                </div>
+
+                                
+                                <div  class="carrito col-12  d-flex justify-content-evenly">
+                                    <div class="col-12 d-flex justify-content-center ">
+                                        <button type="button" class="botoncar ">Agregar al carrito</button>
                                     </div>
                                 </div>
                             </div>      
                     <div class="col-12 flex-column mt-5">
                         <div class="col-12 d-flex p-0 ">
-                            <div class="col-5 border border-bottom-0 rounded-top bg-white fs-1">
+                            <div class="col-5 border border-bottom-0 bg-white rounded-top fs-1">
                                 <p class="m-auto text-secondary">Productos de interes</p>
                             </div>
                             <div class="col-7 border-bottom"></div>
@@ -165,9 +152,9 @@
 
                         </div> --}}
 
-                        <div class="carta d-flex flex-row mt-5 mb-5">
+                        <div class="d-flex flex-row border border-top-0 bg-white">
                             @foreach ($artesanias as $artesania)
-                                <div class="card container-fluid rounded-4 " style="width: 15rem;">
+                                <div class="carta card container-fluid rounded-4 ml-2 mr-2 mt-5 mb-2" style="width: 15rem;">
                                     <a href="{{ route('detalleArtesania', $artesania->id_artesania) }}">
             
                                         @foreach ($array as $y)
@@ -182,6 +169,7 @@
                                             <h5 class="card-title">{{ $artesania->nombre }}</h5>
                                             <a href="{{ route('detalleArtesania', $artesania->id_artesania) }}" class="btn btn-primary">Ver detalle</a>
                                         </div>
+                                        
                                         <br>
             
                                 </div>

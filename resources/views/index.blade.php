@@ -3,7 +3,7 @@
    
 
         <section class="cuerpo_index ">
-            <section class="container-fluid d-flex cabeza">
+            <section class="container-fluid d-flex">
                 <article class="texto container col-12  col-md-6  col-xxl-6">
                     <h2>Artesanias Indigenas</h2>
                     <h4>Descubre los tesoros artesanales escondidos en el cauca</h4>
@@ -17,20 +17,20 @@
                         Nisi, impedit. Voluptatibus impedit consequuntur, illum laudantium nam commodi porro cumque, sequi.
                     </p>
                 </article>
-                <section id="carouselExampleControls" class="carrusel carousel col-12  col-md-6  col-xxl"
+                <section id="carouselExampleControls" class="carrusel rounded-5 carousel col-12  col-md-6  col-xxl"
                     data-bs-ride="carousel">
                     <article class="carousel-inner">
                         <article class="carousel-item active">
-                            <img src="img/Fondo1.jpg" class="d-block w-100" alt="img" height="350px" width="180px">
+                            <img src="img/Fondo1.jpg" class="d-block w-100" alt="img" height="350px" width="150px">
                         </article>
                         <article class="carousel-item">
-                            <img src="img/Fondo2.jpg" class="d-block w-100" alt="img" height="350px" width="200px">
+                            <img src="img/Fondo2.jpg" class="d-block w-100" alt="img" height="350px" width="150px">
                         </article>
                         <article class="carousel-item">
-                            <img src="img/Fondo3.png" class="d-block w-100" alt="img" height="350px" width="200px">
+                            <img src="img/Fondo3.png" class="d-block w-100" alt="img" height="350px" width="150px">
                         </article>
                         <article class="carousel-item">
-                            <img src="img/Fondo4.png" class="d-block w-100" alt="img" height="350px" width="200px">
+                            <img src="img/Fondo4.png" class="d-block w-100" alt="img" height="350px" width="150px">
                         </article>
                     </article>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -78,13 +78,13 @@
 
             <div class="carta d-flex flex-wrap mt-6 mb-6 ">
                 @foreach ($artesanias as $artesania)
-                    <div class=" container p-4 rounded-4 colorContainer " style="width: 20rem; height: 25rem; margin-left: 3vh; margin-top: 8vh ">
+                    <div class=" container p-4 rounded-2 colorContainer " style="width: 20rem; height: 25rem; margin-left: 3; margin-top: 8vh ">
                         <a href="{{ route('detalleArtesania', $artesania->id_artesania) }}">
 
                             @foreach ($array as $y)
                                 @foreach ($y as $item)
                                     @if ($item->artesania_id == $artesania->id_artesania)
-                                        <img src="{{ $item->imagen }}" class="card-img-top mt-3  " alt="img" height="250"
+                                        <img src="{{ $item->imagen }}" class="card-img-top mt-3 rounded-2 " alt="img" height="250"
                                             width="200">
                                     @endif
                                 @endforeach
@@ -93,14 +93,12 @@
                                 <h5 class="card-title">{{ $artesania->nombre }}</h5>
                                 <h6 class="text-success"> $ {{ $artesania->precio }}</h6>
                             </div>
-                            <br>
+                        
 
                     </div>
                 @endforeach
                 </a>
             </div>
         </section>
-
-
-
+        
 @endsection

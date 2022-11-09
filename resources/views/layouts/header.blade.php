@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/detailCraft.css">
     <link rel="stylesheet" href="../css/pasarela.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/> 
@@ -18,7 +19,7 @@
  <body>
     <div class=" header col-12 p-0 d-flex justify-content-center flex-wrap ">
         <div class="col-2 fs-1">
-             <a href="http://127.0.0.1:8000/index" class="nav-link">Qhatu</a>
+             <a href="http://127.0.0.1:8000/index" class="titulo nav-link">Qhatu</a>
 
         </div>
         <div class="col-8 d-flex justify-content-center gap-2">
