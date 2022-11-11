@@ -13,17 +13,6 @@
                 <section class="col-11  
                                 d-flex 
                                 flex-wrap">
-                       {{-- este div contiene el titulo y el icono feo del carrito :( --}}
-                      {{-- <div class="col-12
-                                  d-flex
-                                  flex-wrap">
-                         <div class="col-9 d-flex justify-content-stard pl-5 align-items-center text-break">
-                            <h1>{{ $artesania->nombre }}</h1>
-                         </div>
-                         <div class="col-3  d-flex justify-content-end p-0">
-                            <img src="../img/icono_compra.png" class="img-fluid" width="100px" alt="">
-                         </div>
-                      </div> --}}
                       {{-- este div contiene la informacion de la artesania y fotos con la compra --}}
                       <div class="col-12 d-flex flex-wrap row  mt-2">
                           <div class="col-6">
@@ -34,13 +23,13 @@
                                             {{-- foto de perfil --}}
                                             <div class="d-flex col-2 p-0 justify-content-center">
                                                 @foreach ($artesania->Indigena as $foto)
-                                                <img src="{{$foto->foto}}" class=" rounded-circle" height="50px" width="50px" alt="">
+                                                   <img src="{{$foto->foto}}" class=" rounded-circle" height="50px" width="50px" alt="">
                                                 @endforeach 
                                             </div>
                                             {{-- nombre del indigena --}}
                                             <div class="col-5 p-0 d-flex align-items-center pb-3 text-break">
                                                 @foreach ($artesania->Indigena as $nombre)
-                                                  <p class="nombre">{{$nombre->nombre}}</p>
+                                                  <p class="nombre">{{$nombre->nombres}}</p>
                                                 @endforeach  
                                             </div>
                                             {{-- estrellas --}}
@@ -94,7 +83,7 @@
                                 <div id="carouselExampleControls" class="carousel slide mb-10" data-bs-ride="carousel" >
                                     <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel px-5">
                                         <div class="carousel-inner">
-                                            @foreach ($imagenes as $img)
+                                            @foreach ($imagen as $img)
                                               <div class="carousel-item active px-5 ">
                                                 <img src="{{$img->imagen}}" class="d-block w-50 rounded-4 m-auto"style="height: 30vh;width:10vw; " alt="...">
                                               </div> 
@@ -123,47 +112,22 @@
                                     </div>
                                 </div>
                             </div>      
-                    <div class="col-12 flex-column mt-5">
+                    <div class="col-12 flex-column mt-5 mb-5">
                         <div class="col-12 d-flex p-0 ">
                             <div class="col-5 border border-bottom-0 bg-white rounded-top fs-1">
                                 <p class="m-auto text-secondary">Productos de interes</p>
                             </div>
                             <div class="col-7 border-bottom"></div>
                         </div>
-
-                        {{-- <div class="col-12 border border-top-0 shadow-lg d-flex flex-row gap-3 p-4 mb-5">
-                            @foreach ($artesanias as $a) 
-                                <div class="card" style="width: 22rem;">
-                                    @foreach ($array as $y)
-                                       @foreach ($y as $item)
-                                            @if ($item->artesania_id == $a->id_artesania)
-                                                <img src="{{$item->imagen}}" class="card-img-top" alt="img" height="150" width="20">
-                                            @endif 
-                                       @endforeach
-                                    @endforeach
-
-                                   <div class="card-body">
-                                        <h5 class="card-title">{{$a->nombre}}</h5>
-                                        <a href="#" class="btn btn-primary">Ver detalle</a>
-                                    </div>
-                                </div>
-                            @endforeach
-                            
-
-                        </div> --}}
-
                         <div class="d-flex flex-row border border-top-0 bg-white">
                             @foreach ($artesanias as $artesania)
-                                <div class="carta card container-fluid rounded-4 ml-2 mr-2 mt-5 mb-2" style="width: 15rem;">
+                                <div class="card container-fluid rounded-4 ml-3 mr-2 mt-5 mb-3" style="width: 15rem;">
                                     <a href="{{ route('detalleArtesania', $artesania->id_artesania) }}">
-            
                                         @foreach ($array as $y)
-                                            @foreach ($y as $item)
-                                                @if ($item->artesania_id == $artesania->id_artesania)
-                                                    <img src="{{ $item->imagen }}" class="card-img-top mt-4 " alt="img" height="150"
+                                                @if ($y->artesania_id == $artesania->id_artesania)
+                                                    <img src="{{ $y->imagen }}" class="card-img-top mt-4 " alt="img" height="150"
                                                         width="20">
                                                 @endif
-                                            @endforeach
                                         @endforeach
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $artesania->nombre }}</h5>
@@ -177,7 +141,6 @@
                             </a>
                         </div>
                     </div>
-
                 </section>
 
 

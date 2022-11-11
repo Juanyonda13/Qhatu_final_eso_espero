@@ -1,8 +1,4 @@
-.img-guambiana{
-    background-image: url('../img/fondo.jpeg');
-    background-size: 100% 100%;
-    height: 100%;
-}
+
 .fondo-pasarela{
   background-color:white;
     
@@ -118,7 +114,4 @@ margin-top:0;
 }
 .nombre{
   font-size: 25px;
-}
-.productosinteres{
-  background-color: white;
 }

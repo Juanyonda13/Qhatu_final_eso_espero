@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Indigena extends Model
 {
     use HasFactory;
-    protected $table = 'indigena';
-    protected $primaryKey = 'id_indeigena';
+    protected $table = 'indigenas';
+    protected $primaryKey = 'id_indigena';
     protected $guarded = ['id_indigena'];
     
     public function Etnia(){
