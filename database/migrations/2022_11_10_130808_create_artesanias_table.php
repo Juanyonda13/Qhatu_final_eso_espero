@@ -15,10 +15,18 @@ class CreateArtesaniasTable extends Migration
     {
         Schema::create('artesanias', function (Blueprint $table) {
             $table->id('id_artesania');
-            $table->string('nombre',60);
-            $table->float('precio',100);
+            $table->string('name',60)->unique();
+            $table->float('price',100);
             $table->integer('cantidad')->length(10);
             $table->text('descripcion');
+            //carrito
+              
+            $table->string('slug')->unique();
+            $table->string('details')->nullable();
+            $table->double('shipping_cost');
+            $table->integer('category_id');
+            $table->unsignedInteger('brand_id')->unsigned();
+
             $table->unsignedBigInteger('indigena_id');
             $table->foreign('indigena_id')->references('id_indigena')->on('indigenas')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

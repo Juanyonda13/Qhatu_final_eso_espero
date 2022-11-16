@@ -60,8 +60,8 @@
                                 @endforeach
                             @endforeach
                             <div class="m-3">
-                                <h5 class="card-title">{{ $artesania->nombre }}</h5>
-                                <h6 class="text-success">{{ $artesania->precio }}</h6>
+                                <h5 class="card-title">{{ $artesania->name }}</h5>
+                                <h6 class="text-success">{{ $artesania->price }}</h6>
                             </div>
                     </div>
                 @endforeach
