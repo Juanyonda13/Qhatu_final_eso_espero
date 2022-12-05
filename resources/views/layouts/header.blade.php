@@ -1,42 +1,51 @@
- <!DOCTYPE html>
+<form class="form-inline mr-auto" action="#">
+    <ul class="navbar-nav mr-3">
+        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+    </ul>
+</form>
+<ul class="navbar-nav navbar-right">
 
- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    @if(\Illuminate\Support\Facades\Auth::user())
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown"
+               class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <img alt="image" src="{{ asset('img/logo.png') }}"
+                     class="rounded-circle mr-1 thumbnail-rounded user-thumbnail ">
+                <div class="d-sm-none d-lg-inline-block">
+                    Hola, {{\Illuminate\Support\Facades\Auth::user()->first_name}}</div>
+            </a>
 
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>{{'Tienda Qhatu' }}</title>
-    <link rel="stylesheet" href={{ url('css/app.css') }}>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="../css/detailCraft.css">
-    <link rel="stylesheet" href="../css/pasarela.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/app.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/> 
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <title>Qhatu</title>
- </head>
- <body>
-
-    <div id="app">
-        @include('partials.navbar')
-        <main>
-    @yield('content')
-    </main>
-    @extends('Layouts.footer')
-    </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
- </body>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-title">
+                    Bienvenido, {{\Illuminate\Support\Facades\Auth::user()->name}}</div>
+              <br>
+            
+                <a href="{{ url('logout') }}" class="dropdown-item has-icon text-danger"
+                   onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i> cerrar sesion
+                </a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
+                    {{ csrf_field() }}
+                </form>
+            </div>
+        </li>
+    @else
+        <li class="dropdown"><a href="#" data-toggle="dropdown"
+                                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                {{--                <img alt="image" src="#" class="rounded-circle mr-1">--}}
+                <div class="d-sm-none d-lg-inline-block">{{ __('messages.common.hello') }}</div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-title">{{ __('messages.common.login') }}
+                    / {{ __('messages.common.register') }}</div>
+                <a href="{{ route('login') }}" class="dropdown-item has-icon">
+                    <i class="fas fa-sign-in-alt"></i> {{ __('messages.common.login') }}
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="{{ route('register') }}" class="dropdown-item has-icon">
+                    <i class="fas fa-user-plus"></i> {{ __('messages.common.register') }}
+                </a>
+            </div>
+        </li>
+    @endif
+</ul>
