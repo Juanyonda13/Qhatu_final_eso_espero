@@ -13,7 +13,10 @@
                 </div>
                 <div class="col-lg-3">
                     <p>${{ \Cart::get($item->id)->getPriceSum() }}</p>
+              
                 </div>
+
+              
                 <hr>
             </div>
         </li>

@@ -44,15 +44,26 @@
                     <a href="index" class="btn btn-dark">Continue en la tienda</a>
                 @endif
 
+                {{-- @foreach ($imagen as $image_path)
+                                         
+                <div class="carousel-item active px-5 ">
+                  <img src="{{$image_path->imagen}}" class="d-block w-50 rounded-4 m-auto"style="height: 30vh;width:10vw; " alt="...">
+                </div> 
+              @endforeach --}}
+              
                 @foreach($cartCollection as $item)
                     <div class="row">
-                        {{-- <div class="col-lg-3">
-                            <img src="/images/{{ $item->attributes->image }}" class="img-thumbnail" width="200" height="200">
-                        </div> --}}
+                        <div class="col-lg-3">
+                            <img src="{{ $item->attributes->imagen }}" class="img-thumbnail" width="200" height="200">
+                        </div>
+                        {{-- PARA MOSTRAR LOS CAMPOS  --}}
+                      {{-- {{Cart::getContent()}} --}} 
                         <div class="col-lg-5">
                             <p>
                                 <b><a href="/Artesanias.detalleArtesania/{{ $item->attributes->slug }}">{{ $item->name }}</a></b><br>
                                 <b>Price: </b>${{ $item->price }}<br>
+                            
+                        
                                 {{-- {{ <b>Sub Total: </b>${{ \Cart::get($item->id)->getPriceSum() }}<br> }}
                               {{ <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions()}} }} --}}
                             </p>
@@ -62,7 +73,7 @@
                                 <form action="{{ route('cart.update') }}" method="POST">
                                     {{ csrf_field() }}
                                     <div class="form-group row">
-                                        <input type="hidden" value="{{ $item->id}}" id="id" name="id">
+                                        <input type="hidden" value="{{ $item->id_artesania}}" id="id_artesania" name="id_artesania">
                                         <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
                                                id="quantity" name="quantity" style="width: 70px; margin-right: 10px;">
                                         <button class="btn btn-secondary btn-sm" style="margin-right: 25px;"><i class="fa fa-edit"></i></button>
@@ -70,7 +81,7 @@
                                 </form>
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                     {{ csrf_field() }}
-                                    <input type="hidden" value="{{ $item->id}}" id="id" name="id">
+                                    <input type="hidden" value="{{ $item->id_artesania}}" id="id_artesania" name="id_artesania">
                                     <button class="btn btn-dark btn-sm" style="margin-right: 10px;"><i class="fa fa-trash"></i></button>
                                 </form>
                             </div>

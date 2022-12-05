@@ -83,11 +83,7 @@
                                 <div id="carouselExampleControls" class="carousel slide mb-10" data-bs-ride="carousel" >
                                     <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel px-5">
                                         <div class="carousel-inner">
-                                            @foreach ($imagen as $img)
-                                              <div class="carousel-item active px-5 ">
-                                                <img src="{{$img->imagen}}" class="d-block w-50 rounded-4 m-auto"style="height: 30vh;width:10vw; " alt="...">
-                                              </div> 
-                                            @endforeach
+                                           
                                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                           <span class="visually-hidden">Previous</span>
@@ -109,25 +105,37 @@
                                 <div  class="carrito col-12  d-flex justify-content-evenly">
                                     <div class="col-12 d-flex justify-content-center ">
                                         @foreach($artesanias as $pro)
-                                        {{-- <div class="col-lg-3"> --}}
-                                            {{-- <div class="card" style="margin-bottom: 20px; height: auto;">
-                                                <img src="/images/{{ $pro->image_path }}"
+                                                {{-- ESTO ES LA IMAGEN DEL CARRITO --}}
+                                                
+                                                {{-- <img src="/images/{{ $pro->image_path }}"
                                                      class="card-img-top mx-auto"
                                                      style="height: 150px; width: 150px;display: block;"
                                                      alt="{{ $pro->image_path }}"
                                                      > --}}
+
+                                                     {{-- IMAGEN ARTESANIA --}}
+                                                     @foreach ($imagen as $image_path)
+                                         
+                                                     <div class="carousel-item active px-5 ">
+                                                       <img src="{{$image_path->imagen}}"  class="card-img-top mx-auto"
+                                                       style="height: 150px; width: 150px;display: block;"
+                                                       alt="{{ $image_path->imagen }}"
+                                                       >
+                                                     </div> 
+                                                   
                                         
                                             <div class="card" style="margin-bottom: 20px; height: auto;">
                                                    {{--  //agregar al carrito BOTON
                                                      --}}
                                                     <a href=""><h6 class="card-title">{{ $pro->name }}</h6></a>
                                                     <p>${{ $pro->price }}</p>
+                                                    
                                                     <form action="{{ route('cart.store') }}" method="POST">
                                                         {{ csrf_field() }}
-                                                        <input type="hidden" value="{{ $pro->id }}" id="id" name="id">
+                                                        <input type="hidden" value="{{ $pro->id_artesania }}" id="id_artesania" name="id_artesania">
                                                         <input type="hidden" value="{{ $pro->name }}" id="name" name="name">
                                                         <input type="hidden" value="{{ $pro->price }}" id="price" name="price">
-                                                        <input type="hidden" value="{{ $pro->image_path }}" id="img" name="img">
+                                                        <input type="hidden" value="{{ $image_path->imagen }}" id="imagen" name="imagen">
                                                         <input type="hidden" value="{{ $pro->slug }}" id="slug" name="slug">
                                                         <input type="hidden" value="1" id="quantity" name="quantity">
                                                         <div class="card-footer" style="background-color: white;">
@@ -138,7 +146,7 @@
                                                             </div>
                                                         </div>
                                                     </form>
-                                            
+                                                    @endforeach
                                             </div>
                                     @endforeach
                                     </div>
