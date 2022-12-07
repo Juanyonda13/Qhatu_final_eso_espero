@@ -30,7 +30,7 @@ class ArtesaniaController extends Controller
             return view('Artesanias.detalleArtesania',compact('artesania','imagen','artesania','array','imagen','artesanias'));
     }
     public function pasarela(){
-        return view('shop_craft.pasarela1');
+        return view('pasarela.pasarela');
     }
 
 
