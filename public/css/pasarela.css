@@ -13,7 +13,7 @@ p {
 
 #heading {
   text-transform: uppercase;
-  color: #673AB7;
+  color: #321bcc;
   font-weight: normal
 }
 
@@ -63,13 +63,13 @@ p {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border: 1px solid #673AB7;
+  border: 1px solid #321bcc;
   outline-width: 0
 }
 
 #msform .action-button {
   width: 100px;
-  background: #673AB7;
+  background: #321bcc;
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -82,7 +82,7 @@ p {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-  background-color: #311B92
+  background-color: #321bcc
 }
 
 #msform .action-button-previous {
@@ -118,7 +118,7 @@ p {
 }
 
 .purple-text {
-  color: #673AB7;
+  color:#321bcc;
   font-weight: normal
 }
 
@@ -208,7 +208,7 @@ p {
 }
 
 .progress-bar {
-  background-color: #673AB7
+  background-color: #321bcc
 }
 
 .fit-image {
