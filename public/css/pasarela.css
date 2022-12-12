@@ -43,27 +43,13 @@ p {
 }
 
 #msform input,
-#msform textarea {
-  padding: 8px 15px 8px 15px;
-  border: 1px solid #ccc;
-  border-radius: 0px;
-  margin-bottom: 25px;
-  margin-top: 2px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: montserrat;
-  color: #2C3E50;
-  background-color: #ECEFF1;
-  font-size: 16px;
-  letter-spacing: 1px
-}
+
 
 #msform input:focus,
 #msform textarea:focus {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border: 1px solid #321bcc;
   outline-width: 0
 }
 
@@ -156,17 +142,17 @@ p {
 
 #progressbar #account:before {
   font-family: FontAwesome;
-  content: "\f13e"
+  content: "\f0ac"
 }
 
 #progressbar #personal:before {
   font-family: FontAwesome;
-  content: "\f007"
+  content: "\f09d"
 }
 
 #progressbar #payment:before {
   font-family: FontAwesome;
-  content: "\f030"
+  content: "\f00c"
 }
 
 #progressbar #confirm:before {

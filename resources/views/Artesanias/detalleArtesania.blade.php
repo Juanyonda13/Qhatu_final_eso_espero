@@ -97,7 +97,7 @@
                                 </div>
                                 <div  class="compra col-12  d-flex justify-content-evenly">
                                     <div class="col-12 d-flex justify-content-center ">
-                                        <button type="button" class="botoncom">Comprar ahora</button>
+                                        <a type="button" class="btn btn-info" href="{{route('pasarela',$artesania->id_artesania)}}">Comprar ahora</a>
                                     </div>
                                 </div>
 
