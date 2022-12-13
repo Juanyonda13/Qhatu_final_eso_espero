@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Artesania;
 use App\Models\Imagen;
 use App\Models\Indigena;
-
+use App\Models\DetalleCompra;
 use Illuminate\Http\Request;
-
+use App\Models\Compra;
 class ArtesaniaController extends Controller
 {
     //
@@ -32,7 +32,21 @@ class ArtesaniaController extends Controller
     public function pasarela($id_artesania){
         return view('pasarela.pasarela',compact('id_artesania'));
     }
-    public function pasarelaStore(Request $request,$id_artesania){ 
+    public function pasarelaStore(Request $request,$id_artesania){  
+        
+        $detalle_compra=new DetalleCompra();
+        $detalle_compra->unidades=$request->unidades;
+        $detalle_compra->valor_unitario=$request->valor_unitario;
+        $detalle_compra->valor_total=$request->valor_total;
+        $detalle_compra->artesania_id=$id_artesania;
+        $detalle_compra->comprador_id=$request->comprador_id;
+        $detalle_compra->save();
+
+        $compra=new Compra();
+        $compra->fecha=$request->fecha;
+        $compra->detalle_compra_id=$request->detalle_compra_id;
+        $compra->save();
+
         $envio=new Envio();
         $envio->nombre=$request->nombre;
         $envio->direccion=$request->direccion;

@@ -18,4 +18,7 @@ class Artesania extends Model
     public function  Indigena(){
         return $this->hasMany(Indigena::class,'id_indigena','indigena_id');
     }
+    public function DetalleCompra(){
+        return $this->hasMany(DetalleCompra::class,'artesania_id');
+    }
 }
