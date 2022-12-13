@@ -20,7 +20,7 @@ class CreateIndigenasTable extends Migration
             $table->string('foto');
             $table->unsignedBigInteger('etnia_id');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id_user')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('etnia_id')->references('id_etnia')->on('etnias')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

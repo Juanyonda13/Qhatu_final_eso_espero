@@ -21,7 +21,7 @@ class CreateDetalleComprasTable extends Migration
             $table->unsignedBigInteger('artesania_id');
             $table->foreign('artesania_id')->references('id_artesania')->on('artesanias')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id_user')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

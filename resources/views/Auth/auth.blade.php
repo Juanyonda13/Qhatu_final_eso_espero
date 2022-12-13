@@ -1,10 +1,15 @@
 
 <head>
+
   <link rel="stylesheet" href="../css/login.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <div class="z-index">
+    @include('sweetalert::alert')
+  </div>
+
   <div class="container" id="container">
     <div class="form-container sign-up-container">
         <form action="{{route('/registerStore')}}" method="POST">
@@ -12,8 +17,23 @@
             <h1>Crear cuenta</h1>
 
             <input type="text" placeholder="Nombre" name="name"/>
+            @error('name')
+            <span class="invalid-feedback" role="alert">
+                <strong>nombre requqerido</strong>
+            </span>
+            @enderror
             <input type="email" placeholder="Email" name="email" />
+            @error('email')
+            <span class="invalid-feedback" role="alert">
+                <strong>nombre requqerido</strong>
+            </span>
+            @enderror
             <input type="password" placeholder="Contraseña" name="password" />
+            @error('password')
+            <span class="invalid-feedback" role="alert">
+                <strong>nombre requqerido</strong>
+            </span>
+            @enderror
             <button type="submit">Registrar</button>
         </form>
     </div>

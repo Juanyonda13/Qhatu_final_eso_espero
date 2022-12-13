@@ -18,7 +18,7 @@ Route::get('/',[AuthContoller::class,'register'])->name('/register');
 Route::post('/Register',[AuthContoller::class,'registerStore'])->name('/registerStore');
 
 ///index/////////1
-Route::get('/index',[ArtesaniaController::class,'index'])->name('index');
+Route::get('/index',[ArtesaniaController::class,'index'])->name('index')->middleware('auth');
 //////el detalle da la artesania
 Route::get('/detalle_artesania/{id_artesania}',[ArtesaniaController::class,'detalle_artesania'])->name('detalleArtesania');
 //////compra del producto :(
