@@ -18,8 +18,8 @@ class CreateSubastasTable extends Migration
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
             $table->float('oferta',100);
-            $table->unsignedBigInteger('comprador_id');
-            $table->foreign('comprador_id')->references('id_comprador')->on('compradors')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id_user')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('artesania_subastada_id');
             $table->foreign('artesania_subastada_id')->references('id_artesania_subastada')->on('artesania_subastadas')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

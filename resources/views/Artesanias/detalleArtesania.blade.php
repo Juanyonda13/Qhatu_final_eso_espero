@@ -1,5 +1,6 @@
 @extends('Layouts.header')
 @section('content')
+@include('sweetalert::alert')
     <div class="cuerpo_detalle col-12 d-flex 
                 justify-content-center 
                 pt-3 d-flex 

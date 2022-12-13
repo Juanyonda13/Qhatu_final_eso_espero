@@ -1,5 +1,6 @@
 @extends('Layouts.header')
 @section('content')
+@include('sweetalert::alert')
         <section class="cuerpo_index ">
             <section class="container-fluid d-flex">
                 <article class="texto container col-12  col-md-6  col-xxl-6">
@@ -45,7 +46,7 @@
             </section>
 
 
-
+{{-- 
             <div class="carta d-flex flex-wrap">
                 @foreach ($artesania as $artesania)
                     <div class=" container p-4 rounded-2 colorContainer " style="width: 20rem; height: 25rem; margin-left: 3; margin-top: 8vh; margin-bottom: 8vh  ">
@@ -66,7 +67,7 @@
                     </div>
                 @endforeach
                 </a>
-            </div>
+            </div> --}}
         </section>
         
 @endsection

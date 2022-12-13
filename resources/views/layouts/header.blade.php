@@ -1,5 +1,5 @@
  <!DOCTYPE html>
-
+ @include('sweetalert::alert')
  <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
  <head>

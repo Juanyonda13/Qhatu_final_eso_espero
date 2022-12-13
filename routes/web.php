@@ -2,7 +2,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ArtesaniaController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\AuthContoller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.header');
-});
+Route::get('/',[AuthContoller::class,'register'])->name('/register');
+Route::post('/Register',[AuthContoller::class,'registerStore'])->name('/registerStore');
+
 ///index/////////1
 Route::get('/index',[ArtesaniaController::class,'index'])->name('index');
 //////el detalle da la artesania

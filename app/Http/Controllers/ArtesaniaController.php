@@ -12,12 +12,12 @@ class ArtesaniaController extends Controller
 {
     //
     public function index(){
-        $artesania=Artesania::get();           
-        foreach($artesania as $a){
-            $imagen=Imagen::where('artesania_id',$a->id_artesania)->first();
-            $array[]=[$imagen];
-        }
-       return view('index',compact('artesania','artesania','array','imagen')); 
+        // $artesania=Artesania::get();           
+        // foreach($artesania as $a){
+        //     $imagen=Imagen::where('artesania_id',$a->id_artesania)->first();
+        //     $array[]=[$imagen];
+        // }
+       return view('index'/* ,compact('artesania','artesania','array','imagen') */); 
     }
     public function detalle_artesania($id_artesania){
             $artesania=Artesania::findorFail($id_artesania);
