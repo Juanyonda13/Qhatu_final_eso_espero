@@ -16,7 +16,7 @@ use App\Http\Controllers\Auth\AuthContoller;
 
 Route::get('/',[AuthContoller::class,'register'])->name('/register');
 Route::post('/Register',[AuthContoller::class,'registerStore'])->name('/registerStore');
-
+Route::post('/login',[AuthContoller::class,'login'])->name('/login');
 ///index/////////1
 Route::get('/index',[ArtesaniaController::class,'index'])->name('index')->middleware('auth');
 //////el detalle da la artesania

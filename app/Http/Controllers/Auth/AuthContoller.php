@@ -7,7 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use GuzzleHttp\Promise\Promise;
-
+use Illuminate\Support\Facades\Auth;
+use Hash;
 class AuthContoller extends Controller
 {
     //
@@ -23,25 +24,37 @@ class AuthContoller extends Controller
             'password' => 'required'
         ]);
         $email = User::where('email', $request->email)->first();
-
         if ($email == null) {
             $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
-            $user->password = $request->password;
+            $user->password =Hash::make($request->password);
             $user->perfil_id = 2;
             $user->save();
-            $email=User::where('email',$request->email)->first();
-            $token= $email->createToken('auth_token')->plainTextToken;
-            if($token != null){
-                Alert::success('Bienvenido a Qhatu!', 'Gracias por elegirnos');
-                return redirect()->route('index');
-            }else{
-                return 2;
-            }
+            $credentials = $request->only('email', 'password');
+            Auth::attempt($credentials);
+            Alert::success('Bienvenido a Qhatu!', 'Gracias por elegirnos');
+            return redirect()->intended('index');
         } else {
             Alert::error('Lo sentimos!', 'El correo ya esta registrado con nosotros');
             return redirect()->route('/register');
         }
     }
+
+    public function login(Request $request){
+       
+        if($request->filled(['email','password'])){
+            $credentials = $request->only('email', 'password');
+            if (Auth::attempt($credentials)) {
+                return redirect()->intended('index');
+            }else {
+                Alert::error('Lo sentimos!', '');
+                return redirect()->route('/register');
+            }
+        }else{
+            return 2;
+        }
+
+
+     }
 }

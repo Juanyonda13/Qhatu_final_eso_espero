@@ -38,13 +38,16 @@
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="{{ route('/login')}}" method="POST">
+            @csrf
             <h1>Iniciar sesion</h1>
 
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Contraseña" />
+            <input type="email" placeholder="Email" name="email" />
 
-            <button>Iniciar</button>
+            <input type="password" placeholder="Contraseña"  name="password"/>
+
+
+            <button type="submit">Iniciar</button>
         </form>
     </div>
     <div class="overlay-container">
