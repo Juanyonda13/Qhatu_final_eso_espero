@@ -47,7 +47,7 @@
 
 
             <div class="carta d-flex flex-wrap">
-                @foreach ($artesania as $artesania)
+                @foreach ($artesanias as $artesania)
                     <div class=" container p-4 rounded-2 colorContainer " style="width: 20rem; height: 25rem; margin-left: 3; margin-top: 8vh; margin-bottom: 8vh  ">
                         <a href="{{ route('detalleArtesania', $artesania->id_artesania) }}">
 
@@ -70,3 +70,4 @@
         </section>
         
 @endsection
+

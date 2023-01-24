@@ -13,12 +13,11 @@
                 
             
                         @can('crear-producto')
-                        <a class="btn btn-warning" href="{{ route('products.create') }}">Nuevo</a>
+                        <a class="btn btn-warning" href="{{ route('products.create') }}">Nuevo producto</a>
                         @endcan
             
                         <table class="table table-striped mt-2">
                                 <thead style="background-color:#6777ef">                                     
-                                    <th style="display: none;">id</th>
                                     <th style="color:#fff;">nombre</th>
                                     <th style="color:#fff;">valor</th>                                    
                                     <th style="color:#fff;">imagen</th>   
@@ -46,7 +45,7 @@
                                                                                                                  
                                     @can('borrar-producto')
                                     
-                                  <form action="{{route('products.destroy',($product->id))}}" method="POST" class="formEliminar">
+                                  <form action="{{route('products.destroy',($product->id))}}" method="post" class="formeliminar">
                                   @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-sm" href="{{ route('products.destroy',$product->id) }}">Borrar</button>

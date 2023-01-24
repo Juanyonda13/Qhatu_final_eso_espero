@@ -21,8 +21,10 @@ use App\Http\Controllers\productsController;
 Route::get('/', function () {
     return view('layouts.header');
 });
-///index/////////1
+///index/////////
 Route::get('/index',[ArtesaniaController::class,'index'])->name('index');
+Route::get('/',[ArtesaniaController::class,'index'])->name('index');
+
 //////el detalle da la artesania
 Route::get('/detalle_artesania/{id_artesania}',[ArtesaniaController::class,'detalle_artesania'])->name('detalleArtesania');
 //////compra del producto :(
@@ -46,3 +48,4 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('usuarios', UsuarioController::class);
     Route::resource('products', ProductsController::class);
 });
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,10 +1,10 @@
 @extends('layouts.auth_app')
 @section('title')
-    Registro administrador
+    Registrarse
 @endsection
 @section('content')
     <div class="card card-primary">
-        <div class="card-header"><h4>Registro</h4></div>
+        <div class="card-header"><h4>Registrarse</h4></div>
 
         <div class="card-body pt-1">
             <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -17,7 +17,7 @@
                             <input id="firstName" type="text"
                                    class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                    name="name"
-                                   tabindex="1" placeholder="Ingrese el nombre completo" value="{{ old('name') }}"
+                                   tabindex="1" placeholder="Ingrese su nombre" value="{{ old('name') }}"
                                    autofocus required>
                             <div class="invalid-feedback">
                                 {{ $errors->first('name') }}
@@ -26,11 +26,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Correo electronico:</label><span
+                            <label for="email">Email:</label><span
                                     class="text-danger">*</span>
                             <input id="email" type="email"
                                    class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                   placeholder="Ingrese su direccion de correo" name="email" tabindex="1"
+                                   placeholder="Ingrese su correo electronico" name="email" tabindex="1"
                                    value="{{ old('email') }}"
                                    required autofocus>
                             <div class="invalid-feedback">
@@ -45,7 +45,7 @@
                                     class="text-danger">*</span>
                             <input id="password" type="password"
                                    class="form-control{{ $errors->has('password') ? ' is-invalid': '' }}"
-                                   placeholder="Ingrese contraseña" name="password" tabindex="2" required>
+                                   placeholder="Ingrese su contraseña" name="password" tabindex="2" required>
                             <div class="invalid-feedback">
                                 {{ $errors->first('password') }}
                             </div>
@@ -77,6 +77,6 @@
     </div>
     <div class="mt-5 text-muted text-center">
         Ya tiene una cuenta ? <a
-                href="{{ route('login') }}">Iniciar sesión</a>
+                href="{{ route('login') }}">iniciar sesión</a>
     </div>
 @endsection

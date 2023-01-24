@@ -1,0 +1,117 @@
+
+.fondo-pasarela{
+  background-color:white;
+    
+}
+.cuerpo_detalle{
+  background-color: rgb(236, 239, 241);
+}
+
+
+#svg_form_time {
+  height: 15px;
+  max-width: 80%;
+  margin: 40px auto 20px;
+  display: block;
+}
+
+#svg_form_time circle,
+#svg_form_time rect {
+  fill: white;
+}
+
+.button {
+  background: rgb(237, 40, 70);
+  border-radius: 5px;
+  padding: 15px 25px;
+  display: inline-block;
+  margin: 10px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow:0px 2px 5px rgb(0,0,0,0.5);
+}
+
+.disabled {
+  display:none;
+}
+
+
+
+
+input {
+  width: 100%;
+  margin: 7px 0px;
+  display: inline-block;
+  padding: 12px 25px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 1em;
+  font-family:inherit;
+  background:white;
+}
+
+p{
+  text-align:justify;
+margin-top:0;
+}
+.carrito{
+  margin-top: 5%;
+  width: 90%;
+  height: 6vh;
+}
+.compra{
+  margin-top: 10%;
+  width: 90%;
+  height: 6vh;
+}
+.botoncar{
+  background-color: rgba(65,137,230,.15);
+  border: transparent;
+  width: 60%;
+  height: 100%;
+  padding: 1%;
+  border-radius: 10px;
+  color:#3483fa;
+  font-size: 16px !important;
+  font-weight: 600;
+  text-align: center;
+  
+}
+.botoncom{
+  background-color: #3483fa;
+  border: transparent;
+  width: 60%;
+  height: 100%;
+  padding: 1%;
+  border-radius: 10px;
+  color:#fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  
+}
+.cantidad{
+  margin-top: 4px;
+  font-size: 30px;
+  background-color: rgba(128, 128, 128, 0.584);
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+}
+.cantidadd{
+  font-size: 29px;
+  width: 100%;
+  margin-top: 14px;
+  margin-left: 70px;
+}
+.unidad{
+  margin-left: 15%;
+  margin-bottom: 25px;
+}
+.nombre{
+  font-size: 25px;
+}

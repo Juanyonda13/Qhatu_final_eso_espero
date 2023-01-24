@@ -1,0 +1,32 @@
+.carrusel{  
+    box-shadow: 30px 30px 30px -20px black;
+    transition-delay: 0.2s;
+    width: 48%; 
+    margin-top: 2%;
+    padding: 0 !important; 
+    box-sizing: border-box;
+    margin-left: 10px;
+    border-radius: 6px !important;
+    
+}
+.texto{
+    box-shadow: 30px 30px 30px -20px black;
+    padding: 4vh;
+    text-align: justify;
+    width: 48% !important;
+    margin-top: 2%;
+    padding-left: 0 !important;
+    border-radius: 6px;
+}
+.card-img-top{
+    max-width: 100%;
+}
+
+.colorContainer{
+    background-color: rgba(200, 200, 200, 0.303);
+    border:solid 2px rgb(211, 169, 41);  
+}
+
+.cuerpo_index{
+    background-color: rgb(236, 239, 241);
+}

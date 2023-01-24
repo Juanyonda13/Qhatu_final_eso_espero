@@ -1,0 +1,29 @@
+.fondo{
+    width: 60%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 20%;
+    display: flex;
+    justify-content:center;
+}
+.producto{
+    width: 50%;
+
+}
+.fondotxt{
+    margin-right: 10%;
+    width: 80%;
+    display: flex;   
+}
+.fondo_todo{
+    margin-left: 5%;
+   
+}
+.todo{
+    background-color: rgb(236, 239, 241);
+}
+.card-body{
+    margin-top: 5%;
+    margin-bottom: 5% ;
+    margin-left: 15%;
+}

@@ -12,7 +12,7 @@
                 <img alt="image" src="{{ asset('img/logo.png') }}"
                      class="rounded-circle mr-1 thumbnail-rounded user-thumbnail ">
                 <div class="d-sm-none d-lg-inline-block">
-                    Hola, {{\Illuminate\Support\Facades\Auth::user()->first_name}}</div>
+                    Hi, {{\Illuminate\Support\Facades\Auth::user()->first_name}}</div>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right">
@@ -30,14 +30,9 @@
             </div>
         </li>
     @else
-        <li class="dropdown"><a href="#" data-toggle="dropdown"
-                                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                {{--                <img alt="image" src="#" class="rounded-circle mr-1">--}}
-                <div class="d-sm-none d-lg-inline-block">{{ __('messages.common.hello') }}</div>
+        
             </a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-title">{{ __('messages.common.login') }}
-                    / {{ __('messages.common.register') }}</div>
+            
                 <a href="{{ route('login') }}" class="dropdown-item has-icon">
                     <i class="fas fa-sign-in-alt"></i> {{ __('messages.common.login') }}
                 </a>
