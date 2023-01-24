@@ -18,11 +18,7 @@ use App\Http\Controllers\productsController;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.header');
-});
 ///index/////////
-Route::get('/index',[ArtesaniaController::class,'index'])->name('index');
 Route::get('/',[ArtesaniaController::class,'index'])->name('index');
 
 //////el detalle da la artesania

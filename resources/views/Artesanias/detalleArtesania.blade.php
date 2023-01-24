@@ -1,4 +1,4 @@
-@extends('Layouts.header')
+@extends('layouts.app')
 @section('content')
     <div class="cuerpo_detalle col-12 d-flex 
                 justify-content-center 

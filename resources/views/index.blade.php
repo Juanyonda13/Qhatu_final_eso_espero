@@ -1,4 +1,4 @@
-@extends('Layouts.header')
+@extends('layouts.app')
 @section('content')
         <section class="cuerpo_index ">
             <section class="container-fluid d-flex">
